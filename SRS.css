@@ -53,10 +53,9 @@ header h1 {
     gap: 20px;
 }
 
-/* === Sidebar === */
 .sidebar {
     flex: 1;
-    max-width: 220px;
+    max-width: 200px;
 }
 
 .sidebar h3 {
@@ -66,74 +65,70 @@ header h1 {
 .sidebar ul {
     list-style-type: none;
     padding: 0;
-    display: flex;  /* ให้เรียงในแนวนอน */
-    flex-wrap: wrap; /* ถ้าพื้นที่ไม่พอ ให้ขึ้นบรรทัดใหม่ */
-    gap: 10px;
 }
 
 .sidebar ul li {
     padding: 10px;
+    margin-bottom: 10px;
     background-color: #ff470f;
     color: white;
     text-align: center;
     border-radius: 5px;
     cursor: pointer;
     position: relative;
-    flex: 1; /* ให้ขนาดเมนูยืดหยุ่น */
-    min-width: 150px;
 }
 
 .sidebar ul li:hover {
     background-color: #f74d14;
 }
 
-/* === Dropdown Menu === */
-.dropdown {
-    position: relative;
-}
-
+/* Dropdown Menu */
 .dropdown-content {
     display: none;
     position: absolute;
-    top: 100%; /* ให้ dropdown อยู่ใต้เมนูหลัก */
-    left: 0;
+    left: 100%;
+    top: 0;
     background: white;
     list-style: none;
-    padding: 5px;
+    padding: 0;
     border-radius: 5px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    min-width: 180px;
+    min-width: 150px;
     z-index: 10;
 }
 
-/* จัดเรียงเมนูย่อยให้เป็นแถวแนวนอน */
 .dropdown-content li {
-    display: inline-block;
-    padding: 8px 12px;
+    padding: 10px;
     background: #ff7043;
     color: white;
     text-align: center;
-    border-radius: 5px;
-    margin: 5px;
-    transition: 0.3s;
+    border-bottom: 1px solid #f74d14;
+}
+
+.dropdown-content li:last-child {
+    border-bottom: none;
 }
 
 .dropdown-content li:hover {
     background: #f74d14;
 }
 
-/* แสดง dropdown เมื่อ hover */
 .dropdown:hover .dropdown-content {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
+    display: block;
 }
 
-/* === Content Area === */
 .content {
     flex: 3;
     background: white;
     padding: 20px;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.dropdown-content li {
+    display: inline-block;
+    padding: 5px 15px;
+    margin-right: 10px; 
+    background-color: #e0e0e0;
+    border-radius: 5px; 
 }
