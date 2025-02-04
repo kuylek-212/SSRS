@@ -58,7 +58,7 @@
                             <ul class="dropdown-content">
                                 <li>อิเล็กทรอนิกส์</li>
                                 <li>เทคโนโลยีอิเล็กทรอนิกส์</li>
-                                <li>วิศวกรรมอิเล็กทรอนิกส์</li>
+                                <li data-url="Admin.html">วิศวกรรมอิเล็กทรอนิกส์</li>
                             </ul>
                         </li>
                         <li class="dropdown">
@@ -90,5 +90,15 @@
             </ul>
         </aside>
     </div>
+    
+    document.querySelectorAll('.dropdown-content li').forEach(item => {
+        item.addEventListener('click', function() {
+            let url = this.getAttribute('data-url');  // ดึง URL จาก data-url
+            if (url) {
+                window.location.href = url;  // เปลี่ยนหน้า
+            }
+        });
+    });
+</script>
 </body>
 </html>
