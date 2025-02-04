@@ -1,86 +1,86 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="th">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SBTVC Online Research</title>
     <link rel="stylesheet" href="SRS.css">
 
-    
     <meta name="description" content="วิทยาลัยอาชีวศึกษาเทคโนโลยีฐานวิทยาศาสตร์(ชลบุรี)">
     <meta name="keywords" content="SSRS, ระบบ, เว็บไซต์, GitHub Pages">
     <meta name="author" content="Tanawich Chanchot">
     <meta name="robots" content="index, follow">
     
-
-
     <meta name="google-site-verification" content="B4grT7s_R1qrFTOC99J3Eog2AsfSQ216CbTPTs1jOUs" />
-    
 </head>
 <body>
-    <header>
-        <div class="logo-container">
-            <img src="https://www.sbtvc.ac.th/wp-content/uploads/2024/08/logo_sbtvc.png" alt="SBTVC Logo">
-            <h1>SBTVC Online Research<br>วิทยาลัยอาชีวศึกษาเทคโนโลยีฐานวิทยาศาสตร์ (ชลบุรี)</h1>
-        </div>
-        <nav class="menu">
-            <button>หน้าหลัก</button>
-            <button>ค้นหา</button>
-            <a href="Admin.html">
-                <button>Admin</button>
-            </a>
-        </nav>
-    </header>
 
-    <div class="container">
-        <aside class="sidebar">   
-            <h3>เมนูหลัก</h3>
-            <ul>
-                <li>หน้าหลัก</li>
-                <li>ค้นหางานวิจัย</li>
-            </ul>
-
-            <h3>หมวดหมู่</h3>
-            <ul>
-                <li class="dropdown">
-                    สาขาวิชา
-                    <ul class="dropdown-content">
-                       <li>สาขาวิชาเครื่องกล</li>
-                       <li>สาขาวิชาไฟฟ้ากำลัง</li>
-                        <li>สาขาวิชาอิเล็กทรอนิกส์</li>
-                        <li>สาขาวิชาเมคคาทรอนิกส์</li>
-                       <li>สาขาวิชาเทคโนโลยีอิเล็กทรอนิกส์</li>
-                       <li>สาขาวิชาช่างกลโรงงาน</li>
-                       <li>สาขาวิชาเทคโนโลยีคอมพิวเตอร์</li>
-                        <li>สาขาวิชาเทคโนโลยีคอมพิวเตอร์</li>
-                        <li>สาขาวิชาเทคโนโลยีไฟฟ้า</li>
-                       <li>สาขาวิชาวิศวกรรมอิเล็กทรอนิกส์</li>
-                                         
-                    </ul>
-                </li>
-                <li class="dropdown">
-                    ปีงานวิจัย
-                    <ul class="dropdown-content">
-                        <li>พ.ศ. 2564</li>
-                        <li>พ.ศ. 2565</li>   
-                        <li>พ.ศ. 2566</li>
-                    </ul>
-                </li>
-                <li class="dropdown">
-                    ระดับผลงาน 
-                    <ul class="dropdown-content">
-                        
-                    <li>ระดับจังหวัด</li>
-                        <li>ระดับภาค</li>
-                        <li>ระดับชาติ</li>
-                        <li>ระดับนานาชาติ</li>
-                    </ul>
-                </li>
-            </ul>
-        </aside>
-
-        
-        
+<header>
+    <div class="logo-container">
+        <img src="https://www.sbtvc.ac.th/wp-content/uploads/2024/08/logo_sbtvc.png" alt="SBTVC Logo">
+        <h1>SBTVC Online Research<br>วิทยาลัยอาชีวศึกษาเทคโนโลยีฐานวิทยาศาสตร์ (ชลบุรี)</h1>
     </div>
+    <nav class="menu">
+        <button>หน้าหลัก</button>
+        <button>ค้นหา</button>
+        <a href="Admin.html">
+            <button>Admin</button>
+        </a>
+    </nav>
+</header>
+
+<div class="container">
+    <!-- Sidebar -->
+    <aside class="sidebar">   
+        <h3>เมนูหลัก</h3>
+        <ul>
+            <li><a href="#">หน้าหลัก</a></li>
+            <li><a href="#">ค้นหางานวิจัย</a></li>
+        </ul>
+
+        <h3>หมวดหมู่</h3>
+        <ul>
+            <li class="dropdown">
+                <button class="dropdown-btn" onclick="toggleDropdown('dropdown1')">สาขาวิชา</button>
+                <ul class="dropdown-content" id="dropdown1">
+                    <li>สาขาวิชาเครื่องกล</li>
+                    <li>สาขาวิชาไฟฟ้ากำลัง</li>
+                    <li>สาขาวิชาอิเล็กทรอนิกส์</li>
+                    <li>สาขาวิชาเมคคาทรอนิกส์</li>
+                    <li>สาขาวิชาเทคโนโลยีอิเล็กทรอนิกส์</li>
+                    <li>สาขาวิชาช่างกลโรงงาน</li>
+                    <li>สาขาวิชาเทคโนโลยีคอมพิวเตอร์</li>
+                    <li>สาขาวิชาเทคโนโลยีไฟฟ้า</li>
+                    <li>สาขาวิชาวิศวกรรมอิเล็กทรอนิกส์</li>
+                </ul>
+            </li>
+            <li class="dropdown">
+                <button class="dropdown-btn" onclick="toggleDropdown('dropdown2')">ปีงานวิจัย</button>
+                <ul class="dropdown-content" id="dropdown2">
+                    <li>พ.ศ. 2564</li>
+                    <li>พ.ศ. 2565</li>   
+                    <li>พ.ศ. 2566</li>
+                </ul>
+            </li>
+            <li class="dropdown">
+                <button class="dropdown-btn" onclick="toggleDropdown('dropdown3')">ระดับผลงาน</button>
+                <ul class="dropdown-content" id="dropdown3">
+                    <li>ระดับจังหวัด</li>
+                    <li>ระดับภาค</li>
+                    <li>ระดับชาติ</li>
+                    <li>ระดับนานาชาติ</li>
+                </ul>
+            </li>
+        </ul>
+    </aside>
+</div>
+
+<script>
+    function toggleDropdown(id) {
+        var dropdown = document.getElementById(id);
+        dropdown.classList.toggle("show");
+    }
+</script>
+
 </body>
 </html>
