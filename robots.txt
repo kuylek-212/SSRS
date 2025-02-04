@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://kuylek-212.github.io/SSRS/sitemap.xml
