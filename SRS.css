@@ -125,3 +125,10 @@ header h1 {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
+.dropdown-content li {
+    display: inline-block;
+    padding: 5px 15px;
+    margin-right: 10px; 
+    background-color: #e0e0e0;
+    border-radius: 5px; 
+}
