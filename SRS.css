@@ -132,3 +132,46 @@ header h1 {
     background-color: #e0e0e0;
     border-radius: 5px; 
 }
+.sidebar ul {
+    display: flex; /* จัดเรียงรายการในแนวนอน */
+    flex-wrap: wrap; /* ให้ขึ้นบรรทัดใหม่ถ้าพื้นที่ไม่พอ */
+    gap: 10px; /* กำหนดช่องว่างระหว่างปุ่ม */
+    list-style: none; /* เอาจุดออกจาก <ul> */
+    padding: 0;
+}
+
+.sidebar .dropdown {
+    position: relative;
+    background-color: #FF5722; /* สีพื้นหลัง */
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    color: white;
+    font-weight: bold;
+}
+
+/* ทำให้เมนูย่อยแยกออกจากเมนูหลัก */
+.dropdown-content {
+    position: absolute;
+    top: 100%; /* ให้ dropdown อยู่ใต้เมนูหลัก */
+    left: 0;
+    background: white;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 5px;
+    display: none; /* ซ่อนเมนูย่อยไว้ก่อน */
+    min-width: 200px; /* กำหนดขนาด */
+}
+
+/* แสดงเมนูย่อยเมื่อ hover */
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+/* จัดระยะห่างของตัวเลือกย่อย */
+.dropdown-content li {
+    padding: 8px 12px;
+    white-space: nowrap; /* ป้องกันข้อความขึ้นบรรทัดใหม่ */
+}
+
+
