@@ -4,28 +4,18 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Admin Login</title>
-
 </head>
 <body>
     <div class="admin-container">
-        
-            <h2>Roblox Login</h2>
-         <form action="AdminStatus.html" method="POST">
-            <input type="password" name="password" placeholder="กรอกรหัสผ่าน" required>
+        <h2>Admin Login</h2>
+        <form onsubmit="redirectToAdmin(event)">
+            <input type="password" id="password" placeholder="กรอกรหัสผ่าน" required>
             <button type="submit">เข้าสู่ระบบ</button>
         </form>
     </div>
-    <form onsubmit="redirectToAdmin(event)">
-    <input type="password" id="password" placeholder="กรอกรหัสผ่าน" required>
-    <button type="submit">เข้าสู่ระบบ</button>
-</form>
 
-<script>
-    function redirectToAdmin(event) {
-        event.preventDefault(); // ป้องกันการส่งฟอร์มแบบปกติ
-        window.location.href = "AdminStatus.html";
-    }
-</script>
+    <script>
+        function redirectToAdmin(event) {
+            event.preventDefault(); // ป้องกันการโหลดหน้าใหม่
 
-</body>
-</html>
+            let password
