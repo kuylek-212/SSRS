@@ -13,17 +13,17 @@
             <h1>SBTVC Online Research - อนุมัติเอกสาร</h1>
         </div>
         <nav class="menu">
-            <button>หน้าหลัก</button>
-            <button>ค้นหา</button>
-            <button onclick="logout()">ออกจากระบบ</button>
+            <button type="button" onclick="goHome()">หน้าหลัก</button>
+            <button type="button" onclick="searchResearch()">ค้นหา</button>
+            <button type="button" onclick="logout()">ออกจากระบบ</button>
         </nav>
     </header>
 
     <div class="container">
         <h2>รายการงานวิจัยที่รออนุมัติ</h2>
-        <ul>
-            <li>งานวิจัย 1 <button onclick="approveResearch('งานวิจัย 1')">อนุมัติ</button></li>
-            <li>งานวิจัย 2 <button onclick="approveResearch('งานวิจัย 2')">อนุมัติ</button></li>
+        <ul id="researchList">
+            <li>งานวิจัย 1 <button onclick="approveResearch(this)">อนุมัติ</button></li>
+            <li>งานวิจัย 2 <button onclick="approveResearch(this)">อนุมัติ</button></li>
         </ul>
     </div>
 
@@ -35,13 +35,25 @@
             }
         }
 
-        function approveResearch(name) {
-            alert(name + " ได้รับการอนุมัติแล้ว!");
+        function approveResearch(button) {
+            let listItem = button.parentElement;
+            let researchName = listItem.innerText.replace("อนุมัติ", "").trim();
+            alert(researchName + " ได้รับการอนุมัติแล้ว!");
+            listItem.remove(); // ลบรายการที่อนุมัติแล้วออกจากหน้า
         }
 
         function logout() {
             sessionStorage.removeItem("isAdmin");
+            alert("ออกจากระบบเรียบร้อย!");
             window.location.href = "index.html";
+        }
+
+        function goHome() {
+            window.location.href = "Home.html"; // ปรับตามชื่อไฟล์หน้าหลัก
+        }
+
+        function searchResearch() {
+            alert("ฟังก์ชันค้นหายังไม่ถูกพัฒนา!");
         }
     </script>
 </body>
