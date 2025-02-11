@@ -4,8 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ยอมรับข้อมูล</title>
-  <link rel="stylesheet" href="AdS.css">
-       
+        <link rel="stylesheet" href="AdS.css">
 </head>
 <body>
     <div class="container">
@@ -18,6 +17,7 @@
         <div class="data-field">สาขาวิชา: <span id="display-subject"></span></div>
         <div class="data-field">ปีการศึกษา: <span id="display-year"></span></div>
         <div class="data-field">รายละเอียด: <span id="display-details"></span></div>
+        <img id="image-preview" src="#" alt="Uploaded Image" style="display:none;">
 
         <button id="accept-button">ยอมรับข้อมูล</button>
     </div>
@@ -33,9 +33,18 @@
         document.getElementById('display-year').textContent = params.get('year');
         document.getElementById('display-details').textContent = params.get('details');
 
+        // แสดงรูปภาพที่ถูกส่งมา
+        const imageFile = sessionStorage.getItem('imageData');
+        if (imageFile) {
+            const imagePreview = document.getElementById('image-preview');
+            imagePreview.src = imageFile;
+            imagePreview.style.display = 'block';
+        }
+
         // เมื่อกดยอมรับข้อมูล
         document.getElementById('accept-button').addEventListener('click', function() {
             alert('ข้อมูลได้รับการยอมรับและจะถูกลบแล้ว');
+            sessionStorage.clear(); // ลบข้อมูลใน session storage
             window.location.href = 'index.html'; // กลับไปหน้าแรกหรือหน้าที่ต้องการ
         });
     </script>
