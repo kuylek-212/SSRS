@@ -1,26 +1,138 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="th">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>บันทึกข้อความและรูปภาพ</title>
-    <link rel="stylesheet" href="data.css">
+    <title>SBTVC Online Research</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            width: 100%;
+            max-width: 900px;
+            margin: 20px auto;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+        }
+        .header {
+            background-color: #ff4f00;
+            padding: 10px;
+            color: white;
+            text-align: left;
+            border-radius: 10px 10px 0 0;
+        }
+        .header h1 {
+            margin: 0;
+            font-size: 24px;
+        }
+        .form-group {
+            margin-bottom: 15px;
+        }
+        label {
+            font-weight: bold;
+        }
+        input[type="text"], textarea {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        .img-slider {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+        .img-slider img {
+            max-width: 100%;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+        }
+        .img-slider button {
+            background-color: #ff4f00;
+            color: white;
+            border: none;
+            padding: 10px;
+            border-radius: 50%;
+            margin: 0 5px;
+            cursor: pointer;
+        }
+        button[type="submit"] {
+            background-color: #00aaff;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        button[type="submit"]:hover {
+            background-color: #008fcc;
+        }
+    </style>
 </head>
 <body>
-
     <div class="container">
-        <h2>เพิ่มรูปภาพและบันทึกข้อความ</h2>
-        
-        <input type="file" id="imageUpload" accept="image/*">
-        <div id="imagePreview"></div>
-
-        <textarea id="textInput" placeholder="พิมพ์ข้อความที่นี่..."></textarea>
-        
-        <button id="saveBtn">บันทึก</button>
-        <button id="clearBtn">ล้างข้อมูล</button>
+        <div class="header">
+            <h1>SBTVC Online Research</h1>
+            <p>วิทยาลัยอาชีวศึกษาเทคโนโลยีฐานวิทยาศาสตร์ (ชลบุรี)</p>
+        </div>
+        <div class="img-slider">
+            <button id="prev-btn">&#8249;</button>
+            <div>
+                <img id="image-display" src="" alt="เพิ่มรูปภาพ" />
+                <p>1/10</p>
+            </div>
+            <button id="next-btn">&#8250;</button>
+        </div>
+        <form action="submit_data.php" method="post">
+            <div class="form-group">
+                <label for="name">ชื่อ / หม่าง:</label>
+                <input type="text" id="name" name="name" required />
+            </div>
+            <div class="form-group">
+                <label for="owner">เจ้าของ:</label>
+                <input type="text" id="owner" name="owner" required />
+            </div>
+            <div class="form-group">
+                <label for="subject">สาขาวิชา:</label>
+                <input type="text" id="subject" name="subject" required />
+            </div>
+            <div class="form-group">
+                <label for="year">ปีการศึกษา:</label>
+                <input type="text" id="year" name="year" required />
+            </div>
+            <div class="form-group">
+                <label for="details">รายละเอียด:</label>
+                <textarea id="details" name="details" rows="4" required></textarea>
+            </div>
+            <button type="submit">ส่งข้อมูล</button>
+        </form>
     </div>
+    <script>
+        let currentImageIndex = 1;
+        const totalImages = 10;
 
-    <script src="script.js"></script>
+        document.getElementById('prev-btn').addEventListener('click', function() {
+            currentImageIndex = currentImageIndex > 1 ? currentImageIndex - 1 : totalImages;
+            updateImage();
+        });
+
+        document.getElementById('next-btn').addEventListener('click', function() {
+            currentImageIndex = currentImageIndex < totalImages ? currentImageIndex + 1 : 1;
+            updateImage();
+        });
+
+        function updateImage() {
+            document.getElementById('image-display').src = `images/image${currentImageIndex}.jpg`;
+        }
+
+        updateImage();
+    </script>
 </body>
 </html>
-
