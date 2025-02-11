@@ -3,32 +3,65 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Admin Login</title>
-    <link rel="stylesheet" href="Admin.css">
+    <title>Admin Login</title> ของส่วนแอดมินที่ยังไม่ล็อกอินที่ยังไม่เปลี่ยน แก้ไขที 
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: url('https://www.sbtvc.ac.th/wp-content/uploads/2024/09/LINE_ALBUM_2023.12.18_231223_39.jpg') no-repeat center center fixed;
+            background-size: cover;
+        }
+
+
+        .admin-container {
+            background: rgba(255, 255, 255, 0.8); /* ทำให้พื้นหลังโปร่งแสง */
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            width: 350px;
+            padding: 20px;
+            text-align: center;
+            margin: 100px auto;
+        }
+
+        .admin-container h2 {
+            margin-bottom: 20px;
+            color: #333;
+        }
+
+        .admin-container input {
+            margin-bottom: 15px;
+            padding: 10px;
+            font-size: 16px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            width: 100%;
+        }
+
+        .admin-container button {
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            padding: 10px;
+            font-size: 18px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .admin-container button:hover {
+            background-color: #0056b3;
+        }
+    </style>
 </head>
 <body>
     <div class="admin-container">
-        <h2>Admin Login</h2>
-        <form onsubmit="redirectToAdmin(event)">
-            <input type="password" id="password" placeholder="กรอกรหัสผ่าน" required>
+        
+            <h2>Roblox Login</h2>
+         <form action="k.html" method="POST">
+            <input type="password" name="password" placeholder="กรอกรหัสผ่าน" required>
             <button type="submit">เข้าสู่ระบบ</button>
         </form>
     </div>
-
-    <script>
-        function redirectToAdmin(event) {
-            event.preventDefault();
-
-            let password = document.getElementById("password").value;
-            let correctPassword = "1234"; // รหัสผ่านที่ถูกต้อง
-
-            if (password === correctPassword) {
-                sessionStorage.setItem("isAdmin", "true"); // ตั้งค่าแอดมิน
-                window.location.href = "AdminStatus.html"; // ไปหน้าอนุมัติ
-            } else {
-                alert("รหัสผ่านผิด!");
-            }
-        }
-    </script>
 </body>
 </html>
