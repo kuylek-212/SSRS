@@ -30,4 +30,18 @@
         document.getElementById('display-year').textContent = sessionStorage.getItem('year');
         document.getElementById('display-details').textContent = sessionStorage.getItem('details');
 
-        //
+       // แสดงภาพที่เก็บไว้
+        const imageData = sessionStorage.getItem('imageData');
+        if (imageData) {
+            const imagePreview = document.getElementById('image-preview');
+            imagePreview.src = imageData;
+            imagePreview.style.display = 'block';
+        }
+
+        // ฟังก์ชันยอมรับข้อมูล
+        document.getElementById('accept-button').addEventListener('click', function() {
+            alert('ข้อมูลได้รับการยอมรับแล้ว!');
+        });
+    </script>
+</body>
+</html>
