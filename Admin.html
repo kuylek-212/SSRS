@@ -3,32 +3,37 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Admin Login</title>
-    <link rel="stylesheet" href="Admin.css"> <!-- เชื่อมต่อไฟล์ CSS -->
+    <title>SBTVC Online Research</title>
+    <link rel="stylesheet" href="SRS.css">
+    
+    <meta name="description" content="วิทยาลัยอาชีวศึกษาเทคโนโลยีฐานวิทยาศาสตร์(ชลบุรี)">
+    <meta name="keywords" content="SSRS, ระบบ, เว็บไซต์, GitHub Pages">
+    <meta name="author" content="Tanawich Chanchot">
+    <meta name="robots" content="index, follow">
 </head>
 <body>
-    <div class="admin-container">
-        <h2>Admin Login</h2>
-        <form onsubmit="redirectToAdmin(event)">
-            <input type="password" id="password" placeholder="กรอกรหัสผ่าน" required>
-            <button type="submit">เข้าสู่ระบบ</button>
-        </form>
+    <header>
+        <div class="logo-container">
+            <img src="https://www.sbtvc.ac.th/wp-content/uploads/2024/08/logo_sbtvc.png" alt="SBTVC Logo">
+            <h1>SBTVC Online Research<br>วิทยาลัยอาชีวศึกษาเทคโนโลยีฐานวิทยาศาสตร์ (ชลบุรี)</h1>
+        </div>
+        <nav class="menu">
+            <button>หน้าหลัก</button>
+            <button>ค้นหา</button>
+            <a href="Admin.html">
+                <button>Admin</button>
+            </a>
+        </nav>
+    </header>
+
+    <div class="container">
+        <aside class="sidebar">
+            <h3>เมนูหลัก</h3>
+            <ul>
+                <li>หน้าหลัก</li>
+                <li>ค้นหางานวิจัย</li>
+            </ul>
+        </aside>
     </div>
-<script>
-        function redirectToAdmin(event) {
-            event.preventDefault(); // ป้องกันการโหลดหน้าใหม่
-
-            let password = document.getElementById("password").value;
-
-            // สามารถกำหนดรหัสผ่านที่ถูกต้องได้ที่นี่
-            let correctPassword = "1234"; 
-
-            if (password === correctPassword) {
-                window.location.href = "AdminStatus.html"; // เปลี่ยนหน้าไปที่ AdminStatus.html
-            } else {
-                alert("รหัสผ่านผิด!"); // แจ้งเตือนถ้ารหัสผิด
-            }
-        }
-    </script>
 </body>
 </html>
