@@ -19,5 +19,17 @@
             <button type="submit">เข้าสู่ระบบ</button>
         </form>
     </div>
+     <script>
+        document.getElementById("loginForm").addEventListener("submit", function(event) {
+            event.preventDefault(); // ป้องกันการโหลดหน้าใหม่
+            let password = document.getElementById("password").value;
+            
+            if (password === "admin123") {  
+                window.location.href = "admin-dashboard.html"; // ✅ ไปหน้าแอดมิน
+            } else {
+                document.getElementById("error").style.display = "block"; // แสดงข้อความผิดพลาด
+            }
+        });
+    </script>
 </body>
 </html>
