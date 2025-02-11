@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SBTVC Online Research</title>
         <link rel="stylesheet" href="data.css">
-
 </head>
 <body>
     <div class="container">
@@ -15,9 +14,9 @@
         </div>
         
         <!-- ฟอร์ม -->
-        <form id="research-form" action="AdminStatus.html" method="post" enctype="multipart/form-data">
+        <form id="research-form">
             <div class="form-group">
-                <label for="name">ชื่อ:</label>
+                <label for="name">ชื่อ / หม่าง:</label>
                 <input type="text" id="name" name="name" required />
             </div>
             <div class="form-group">
@@ -41,7 +40,7 @@
                 <input type="file" id="image" name="image" accept="image/*" />
                 <img id="preview-image" src="#" alt="Preview Image" style="display:none;">
             </div>
-            <button type="submit">ส่งข้อมูล</button>
+            <button type="button" onclick="submitForm()">ส่งข้อมูล</button>
         </form>
     </div>
 
@@ -55,10 +54,24 @@
                     const preview = document.getElementById('preview-image');
                     preview.src = e.target.result;
                     preview.style.display = 'block';
+                    sessionStorage.setItem('imageData', e.target.result); // เก็บรูปภาพใน sessionStorage
                 }
                 reader.readAsDataURL(file);
             }
         });
+
+        // ฟังก์ชันส่งข้อมูล
+        function submitForm() {
+            // เก็บข้อมูลฟอร์มใน sessionStorage
+            sessionStorage.setItem('name', document.getElementById('name').value);
+            sessionStorage.setItem('owner', document.getElementById('owner').value);
+            sessionStorage.setItem('subject', document.getElementById('subject').value);
+            sessionStorage.setItem('year', document.getElementById('year').value);
+            sessionStorage.setItem('details', document.getElementById('details').value);
+
+            // ย้ายไปยังหน้า accept.html
+            window.location.href = 'accept.html';
+        }
     </script>
 </body>
 </html>
