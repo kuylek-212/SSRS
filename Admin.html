@@ -14,7 +14,6 @@
     <div class="admin-container">
         
             <h2>Roblox Login</h2>
-         <form action="k.html" method="POST">
             <input type="password" name="password" placeholder="กรอกรหัสผ่าน" required>
             <button type="submit">เข้าสู่ระบบ</button>
         </form>
@@ -24,7 +23,7 @@
             event.preventDefault(); // ป้องกันการโหลดหน้าใหม่
             let password = document.getElementById("password").value;
             
-            if (password === "admin123") {  
+            if (password === "123") {  
                 window.location.href = "AdminStatus.html"; // ✅ ไปหน้าแอดมิน
             } else {
                 document.getElementById("error").style.display = "block"; // แสดงข้อความผิดพลาด
