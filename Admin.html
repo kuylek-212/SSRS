@@ -8,15 +8,13 @@
 </head>
 <body>
     <div class="admin-container">
-        <h2>Roblox Login</h2>
+        <h2>Admin Login</h2>
 
-        <!-- แก้ไขฟอร์มที่ใช้ login -->
         <form id="loginForm">
             <input type="password" id="password" name="password" placeholder="กรอกรหัสผ่าน" required>
             <button type="submit">เข้าสู่ระบบ</button>
         </form>
 
-        <!-- ข้อความผิดพลาด -->
         <div id="error" style="display:none; color:red;">รหัสผ่านไม่ถูกต้อง</div>
     </div>
 
@@ -26,7 +24,8 @@
             let password = document.getElementById("password").value;
             
             if (password === "123") {  
-                window.location.href = "AdminStatus.html"; // ไปหน้าแอดมิน
+                sessionStorage.setItem("isAdmin", "true"); // บันทึกสถานะแอดมิน
+                window.location.href = "AdminApproval.html"; // ไปหน้าจัดการเอกสาร
             } else {
                 document.getElementById("error").style.display = "block"; // แสดงข้อความผิดพลาด
             }
