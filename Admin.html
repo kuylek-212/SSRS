@@ -3,37 +3,32 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SBTVC Online Research</title>
-    <link rel="stylesheet" href="SRS.css">
-    
-    <meta name="description" content="วิทยาลัยอาชีวศึกษาเทคโนโลยีฐานวิทยาศาสตร์(ชลบุรี)">
-    <meta name="keywords" content="SSRS, ระบบ, เว็บไซต์, GitHub Pages">
-    <meta name="author" content="Tanawich Chanchot">
-    <meta name="robots" content="index, follow">
+    <title>Admin Login</title>
+    <link rel="stylesheet" href="Admin.css">
 </head>
 <body>
-    <header>
-        <div class="logo-container">
-            <img src="https://www.sbtvc.ac.th/wp-content/uploads/2024/08/logo_sbtvc.png" alt="SBTVC Logo">
-            <h1>SBTVC Online Research<br>วิทยาลัยอาชีวศึกษาเทคโนโลยีฐานวิทยาศาสตร์ (ชลบุรี)</h1>
-        </div>
-        <nav class="menu">
-            <button>หน้าหลัก</button>
-            <button>ค้นหา</button>
-            <a href="Admin.html">
-                <button>Admin</button>
-            </a>
-        </nav>
-    </header>
-
-    <div class="container">
-        <aside class="sidebar">
-            <h3>เมนูหลัก</h3>
-            <ul>
-                <li>หน้าหลัก</li>
-                <li>ค้นหางานวิจัย</li>
-            </ul>
-        </aside>
+    <div class="admin-container">
+        <h2>Admin Login</h2>
+        <form onsubmit="redirectToAdmin(event)">
+            <input type="password" id="password" placeholder="กรอกรหัสผ่าน" required>
+            <button type="submit">เข้าสู่ระบบ</button>
+        </form>
     </div>
+
+    <script>
+        function redirectToAdmin(event) {
+            event.preventDefault();
+
+            let password = document.getElementById("password").value;
+            let correctPassword = "1234"; // รหัสผ่านที่ถูกต้อง
+
+            if (password === correctPassword) {
+                sessionStorage.setItem("isAdmin", "true"); // ตั้งค่าแอดมิน
+                window.location.href = "AdminStatus.html"; // ไปหน้าอนุมัติ
+            } else {
+                alert("รหัสผ่านผิด!");
+            }
+        }
+    </script>
 </body>
 </html>
