@@ -3,28 +3,30 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Admin Login</title> 
-   <link rel="stylesheet" href="Admin.css">
-       
-
-
-        
+    <title>Admin Login</title>
+    <link rel="stylesheet" href="Admin.css">
 </head>
 <body>
     <div class="admin-container">
-        
-            <h2>Roblox Login</h2>
-            <input type="password" name="password" placeholder="กรอกรหัสผ่าน" required>
+        <h2>Roblox Login</h2>
+
+        <!-- แก้ไขฟอร์มที่ใช้ login -->
+        <form id="loginForm">
+            <input type="password" id="password" name="password" placeholder="กรอกรหัสผ่าน" required>
             <button type="submit">เข้าสู่ระบบ</button>
         </form>
+
+        <!-- ข้อความผิดพลาด -->
+        <div id="error" style="display:none; color:red;">รหัสผ่านไม่ถูกต้อง</div>
     </div>
-     <script>
+
+    <script>
         document.getElementById("loginForm").addEventListener("submit", function(event) {
             event.preventDefault(); // ป้องกันการโหลดหน้าใหม่
             let password = document.getElementById("password").value;
             
             if (password === "123") {  
-                window.location.href = "AdminStatus.html"; // ✅ ไปหน้าแอดมิน
+                window.location.href = "AdminStatus.html"; // ไปหน้าแอดมิน
             } else {
                 document.getElementById("error").style.display = "block"; // แสดงข้อความผิดพลาด
             }
