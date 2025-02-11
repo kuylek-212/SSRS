@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ยอมรับข้อมูล</title>
-        <link rel="stylesheet" href="AdS.css">
+    <link rel="stylesheet" href="AdS.css">
 </head>
 <body>
     <div class="container">
@@ -12,7 +12,7 @@
             <h1>ยอมรับข้อมูล</h1>
         </div>
 
-        <div class="data-field">ชื่อ: <span id="display-name"></span></div>
+        <div class="data-field">ชื่อ / หม่าง: <span id="display-name"></span></div>
         <div class="data-field">เจ้าของ: <span id="display-owner"></span></div>
         <div class="data-field">สาขาวิชา: <span id="display-subject"></span></div>
         <div class="data-field">ปีการศึกษา: <span id="display-year"></span></div>
@@ -23,30 +23,11 @@
     </div>
 
     <script>
-        // รับข้อมูลจาก URL
-        const params = new URLSearchParams(window.location.search);
+        // ดึงข้อมูลจาก sessionStorage
+        document.getElementById('display-name').textContent = sessionStorage.getItem('name');
+        document.getElementById('display-owner').textContent = sessionStorage.getItem('owner');
+        document.getElementById('display-subject').textContent = sessionStorage.getItem('subject');
+        document.getElementById('display-year').textContent = sessionStorage.getItem('year');
+        document.getElementById('display-details').textContent = sessionStorage.getItem('details');
 
-        // แสดงข้อมูลที่ถูกส่งมา
-        document.getElementById('display-name').textContent = params.get('name');
-        document.getElementById('display-owner').textContent = params.get('owner');
-        document.getElementById('display-subject').textContent = params.get('subject');
-        document.getElementById('display-year').textContent = params.get('year');
-        document.getElementById('display-details').textContent = params.get('details');
-
-        // แสดงรูปภาพที่ถูกส่งมา
-        const imageFile = sessionStorage.getItem('imageData');
-        if (imageFile) {
-            const imagePreview = document.getElementById('image-preview');
-            imagePreview.src = imageFile;
-            imagePreview.style.display = 'block';
-        }
-
-        // เมื่อกดยอมรับข้อมูล
-        document.getElementById('accept-button').addEventListener('click', function() {
-            alert('ข้อมูลได้รับการยอมรับและจะถูกลบแล้ว');
-            sessionStorage.clear(); // ลบข้อมูลใน session storage
-            window.location.href = 'index.html'; // กลับไปหน้าแรกหรือหน้าที่ต้องการ
-        });
-    </script>
-</body>
-</html>
+        //
