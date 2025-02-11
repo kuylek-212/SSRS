@@ -3,30 +3,46 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>อนุมัติ | SBTVC Online Research</title>
-    <link rel="stylesheet" href="AdS.css">
+    <title>Admin Approval</title>
+    <link rel="stylesheet" href="SRS.css">
 </head>
-<body>
+<body onload="checkAdmin()">
     <header>
         <div class="logo-container">
             <img src="https://www.sbtvc.ac.th/wp-content/uploads/2024/08/logo_sbtvc.png" alt="SBTVC Logo">
-            <h1>อนุมัติ | SBTVC Online Research</h1>
+            <h1>SBTVC Online Research - อนุมัติเอกสาร</h1>
         </div>
         <nav class="menu">
-            <a href="index.html"><button>หน้าหลัก</button></a>
+            <button>หน้าหลัก</button>
+            <button>ค้นหา</button>
+            <button onclick="logout()">ออกจากระบบ</button>
         </nav>
     </header>
 
     <div class="container">
-        <h2>อัปโหลดรูปภาพสำหรับการอนุมัติ</h2>
-        
-        <input type="file" id="imageUpload" accept="image/*">
-        <div id="imagePreview"></div>
-
-        <button id="confirmBtn">ยืนยัน</button>
+        <h2>รายการงานวิจัยที่รออนุมัติ</h2>
+        <ul>
+            <li>งานวิจัย 1 <button onclick="approveResearch('งานวิจัย 1')">อนุมัติ</button></li>
+            <li>งานวิจัย 2 <button onclick="approveResearch('งานวิจัย 2')">อนุมัติ</button></li>
+        </ul>
     </div>
 
-    <script src="ad.js"></script>
+    <script>
+        function checkAdmin() {
+            if (!sessionStorage.getItem("isAdmin")) {
+                alert("กรุณาเข้าสู่ระบบแอดมินก่อน!");
+                window.location.href = "Admin.html";
+            }
+        }
+
+        function approveResearch(name) {
+            alert(name + " ได้รับการอนุมัติแล้ว!");
+        }
+
+        function logout() {
+            sessionStorage.removeItem("isAdmin");
+            window.location.href = "index.html";
+        }
+    </script>
 </body>
 </html>
-
