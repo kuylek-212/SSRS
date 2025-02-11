@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SBTVC Online Research</title>
-    <link rel="stylesheet" href="data.css">
+    
 </head>
 <body>
     <div class="container">
@@ -12,10 +12,11 @@
             <h1>SBTVC Online Research</h1>
             <p>วิทยาลัยอาชีวศึกษาเทคโนโลยีฐานวิทยาศาสตร์ (ชลบุรี)</p>
         </div>
-      
-        <form action="AdminStatus.html" method="post" enctype="multipart/form-data">
+        
+        <!-- ฟอร์ม -->
+        <form id="research-form" action="accept.html" method="get">
             <div class="form-group">
-                <label for="name">ชื่อ:</label>
+                <label for="name">ชื่อ / หม่าง:</label>
                 <input type="text" id="name" name="name" required />
             </div>
             <div class="form-group">
@@ -36,30 +37,10 @@
             </div>
             <div class="form-group">
                 <label for="image">เพิ่มรูปภาพ:</label>
-                <input type="file" id="image" name="image" accept="image/*" required />
+                <input type="file" id="image" name="image" accept="image/*" />
             </div>
             <button type="submit">ส่งข้อมูล</button>
         </form>
     </div>
-    <script>
-        let currentImageIndex = 1;
-        const totalImages = 10;
-
-        document.getElementById('prev-btn').addEventListener('click', function() {
-            currentImageIndex = currentImageIndex > 1 ? currentImageIndex - 1 : totalImages;
-            updateImage();
-        });
-
-        document.getElementById('next-btn').addEventListener('click', function() {
-            currentImageIndex = currentImageIndex < totalImages ? currentImageIndex + 1 : 1;
-            updateImage();
-        });
-
-        function updateImage() {
-            document.getElementById('image-display').src = `images/image${currentImageIndex}.jpg`;
-        }
-
-        updateImage();
-    </script>
 </body>
 </html>
